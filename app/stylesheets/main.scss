@@ -1,0 +1,344 @@
+@import "partials/settings";
+@import "~foundation-sites/scss/foundation";
+@import "partials/base";
+@include foundation-everything($flex: true);
+
+@font-face {
+  font-family: Conduit;
+  src: url("../fonts/ConduitITCStd.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Conduit;
+  src: url("../fonts/ConduitITCStd-Bold.otf") format("opentype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Conduit;
+  src: url("../fonts/ConduitITCStd-Italic.otf") format("opentype");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Conduit;
+  src: url("../fonts/ConduitITCStd-BoldItalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+html,
+body {
+  height: 100%;
+}
+.row {
+  max-width: 100%;
+}
+body {
+  font-family: Conduit;
+  color: white;
+  white-space: nowrap;
+  background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImczNjgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiMwMzA3MTMiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMwNTJCNTIiIG9mZnNldD0iMC4yMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMwOTQzODMiIG9mZnNldD0iMC40MCIvPjxzdG9wIHN0b3AtY29sb3I9IiMxNzZFQkIiIG9mZnNldD0iMC42MCIvPjxzdG9wIHN0b3AtY29sb3I9IiM1NUExRDkiIG9mZnNldD0iMC44MCIvPjxzdG9wIHN0b3AtY29sb3I9IiNBQUQ2RjQiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2czNjgpIiAvPgo8L3N2Zz4=);
+  background-repeat: no-repeat;
+  // 100 * n_sections
+  background-size: 900vw;
+  overflow: hidden;
+}
+
+p {
+  white-space: normal;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+h2 {
+  line-height: 1.1;
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  position: relative;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+
+li, dd {
+  white-space: normal;
+}
+
+dt {
+  display: inline-block;
+  color: rgba(0, 0, 0, 1);
+  background-color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.3em 1em 0.2em 0.4em;
+  margin: 0.75em 0em 1em 0em;
+  vertical-align: middle;
+
+}
+
+.content {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.decorations {
+  width: 100%;
+}
+
+#logo {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 50%;
+  margin-left: -150px;
+}
+
+#sunburst {
+  position: absolute;
+  top: 50%;
+  margin-top: -400px;
+  left: 50%;
+  margin-left: -400px;
+  z-index: 2;
+}
+
+#sunburst2 {
+  position: absolute;
+  top: 50%;
+  margin-top: -800px;
+  left: 50%;
+  margin-left: -800px;
+  z-index: -1;
+  transform-origin: 50% 50%;
+  -animation: orbitSpin 300s infinite linear;
+}
+
+@keyframes orbitSpin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+#sunburst path {
+  stroke: rgba(255, 255, 255, 0.1);
+  fill-rule: evenodd;
+}
+
+#sunburst2 path {
+  stroke: rgba(255, 255, 255, 1.0);
+  fill-rule: evenodd;
+}
+
+#sunburst2 {
+  opacity: 0.05;
+}
+
+#moon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.0;
+}
+
+#sun {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.0;
+}
+
+.fixed-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 250px;
+  height: auto;
+  z-index: 3;
+}
+  .fixed-menu .menu {
+    float: left;
+    margin-left: 20px;
+    display: none;
+  }
+
+  .fixed-menu .menu li {
+    // border-bottom: 1px solid #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+    .fixed-menu .menu li.menu_divider {
+      border-bottom: none;
+      margin: 10px 0;
+      height: 20px;
+    }
+    .fixed-menu .menu li.menu_divider::after {
+      background: none;
+    }
+    .fixed-menu .menu li a {
+      color: #fff;
+      padding: 0.3rem 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .fixed-menu .menu li:first-child {
+      border-bottom: none;
+      margin-bottom: 20px;
+    }
+    .fixed-menu .menu li:last-child {
+      border-bottom: none;
+      margin-top: 20px;
+    }
+    .fixed-menu .menu li:first-child::after,
+    .fixed-menu .menu li:last-child::after {
+      background: none;
+    }
+
+.fixed-menu .menu li::after{
+  content: "";
+  position: absolute;
+
+  height: 1px;
+  width: 100%;
+  background: #444;
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+ }
+
+.asterisk {
+  font-size: 3.2em;
+  font-weight: bold;
+  float: left;
+  line-height: 1;
+}
+
+.asterisk:hover {
+  cursor: pointer;
+}
+
+// Jobs
+ul.key_skills li:before {
+   content: "*";
+   font-size: 1.5em;
+   font-weight: bold;
+   vertical-align: top;
+   position: relative;
+   top: -2px;
+}
+
+ul.job_list_items {
+  width: 200px;
+  margin-top: 50%;
+  float: right;
+}
+  ul.job_list_items li{
+    height: 40px;
+    background: #ccc;
+    margin-bottom: 1px;
+  }
+
+#join .columns{
+  white-space: normal;
+}
+#join .profile {
+  background: #fff;
+  color: blue;
+  height: 1000px;
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+#join .job_openings {
+  padding-right: 0;
+}
+#join .description {
+  margin-top: 10%
+}
+.codestar-button {
+  border: 1px solid white;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 0.6em;
+}
+
+.columns {
+  height: 100%;
+}
+
+.vertical-center {
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+ul.why li:before {
+  content: '+';
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-right: 0.5em;
+  margin-left: -1em;
+}
+
+ul.why li {
+  list-style: none;
+  line-height: normal;
+  margin-bottom: 1.1em;
+}
+
+.team-link {
+  stroke-width: 1px;
+  stroke: white;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+}
+
+.contact_form_container {
+  padding-right: 0;
+}
+
+#contact_form {
+  margin-left: 10px;
+}
+
+.map_container {
+  padding-left: 0;
+  position: relative;
+}
+#contact_form .row .columns {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#map {
+  position: absolute;
+}
+.contact_data_container {
+  height: 250px;
+  width: 100%;
+  background: #3B4E6E;
+  opacity: 0.7;
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  right: 15px;
+  padding-top: 10%;
+}
