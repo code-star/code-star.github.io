@@ -1,4 +1,17 @@
 node_modules
+<<<<<<< HEAD
+=======
+bower_components
+dist
+*.iml
+*.idea
+npm-debug.log
+.DS_STORE
+.project
+=======
+dist
+node_modules/
+>>>>>>> fe9da65f855b142ddabb221aea9185855ae7fdfe
 bower_components
 dist
 *.iml
