@@ -92,4 +92,8 @@ Als iemand je vroeger om water vroeg, pakte je een emmer en liep je naar de wate
           links[i].tabIndex = -1
       }
   })
-}</script><script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async="" defer=""></script></div><script src="./app.55840ae7e174615774bb.js"></script></body></html>
+
+  google.maps.event.addDomListener(window, 'resize', function() {
+    map.setCenter(latLng)
+  })
+}</script><script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async="" defer=""></script></div><script src="./app.12924b1e60cc4f51a897.js"></script></body></html>
